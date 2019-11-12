@@ -1,0 +1,14 @@
+{
+  "resources":[
+    {"pattern":"META-INF/services/org.eclipse.jetty.http.HttpFieldPreEncoder"}, 
+    {"pattern":"javax/servlet/LocalStrings.properties"},
+    {"pattern":"javax/servlet/http/LocalStrings.properties"}, 
+    {"pattern":"mozilla/public-suffix-list.txt"},
+    {"pattern":"org/eclipse/jetty/http/encoding.properties"},
+    {"pattern":"org/eclipse/jetty/http/mime.properties"}, 
+    {"pattern":"org/eclipse/jetty/version/build.properties"}, 
+    {"pattern":"org/slf4j/impl/StaticLoggerBinder.class"}, 
+    {"pattern":"sun/net/idn/uidna.spp"},
+    {"pattern":"sun/text/resources/unorm.icu"}
+  ]
+}

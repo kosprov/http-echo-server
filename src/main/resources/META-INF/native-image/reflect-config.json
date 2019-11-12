@@ -1,0 +1,143 @@
+[
+{
+  "name":"java.io.Serializable",
+  "allDeclaredMethods":true
+},
+{
+  "name":"java.lang.AbstractStringBuilder"
+},
+{
+  "name":"java.lang.Appendable"
+},
+{
+  "name":"java.lang.AssertionError"
+},
+{
+  "name":"java.lang.Boolean",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Byte",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.CharSequence",
+  "allDeclaredMethods":true
+},
+{
+  "name":"java.lang.Character"
+},
+{
+  "name":"java.lang.Class"
+},
+{
+  "name":"java.lang.Cloneable"
+},
+{
+  "name":"java.lang.Comparable",
+  "allDeclaredMethods":true
+},
+{
+  "name":"java.lang.Double",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Enum",
+  "allDeclaredMethods":true
+},
+{
+  "name":"java.lang.Error"
+},
+{
+  "name":"java.lang.Exception"
+},
+{
+  "name":"java.lang.Float",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Integer",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true,
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Iterable",
+  "allDeclaredMethods":true
+},
+{
+  "name":"java.lang.Long",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Number",
+  "allDeclaredFields":true,
+  "allDeclaredMethods":true
+},
+{
+  "name":"java.lang.Object",
+  "allDeclaredMethods":true
+},
+{
+  "name":"java.lang.Override"
+},
+{
+  "name":"java.lang.RuntimeException"
+},
+{
+  "name":"java.lang.Short",
+  "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.String",
+  "allDeclaredMethods":true
+},
+{
+  "name":"java.lang.StringBuffer"
+},
+{
+  "name":"java.lang.StringBuilder",
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name":"java.lang.System"
+},
+{
+  "name":"java.lang.Throwable",
+  "allDeclaredMethods":true
+},
+{
+  "name":"java.lang.annotation.Retention"
+},
+{
+  "name":"java.lang.management.ManagementFactory",
+  "methods":[{"name":"getRuntimeMXBean","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.management.RuntimeMXBean",
+  "methods":[{"name":"getUptime","parameterTypes":[] }]
+},
+{
+  "name":"java.util.ArrayList",
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name":"java.util.Iterator",
+  "allDeclaredMethods":true
+},
+{
+  "name":"java.util.LinkedHashMap",
+  "allDeclaredMethods":true,
+  "allDeclaredConstructors":true
+},
+{
+  "name":"javax.management.ObjectName"
+},
+{
+  "name":"org.eclipse.jetty.util.log.Slf4jLog",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+}
+]
