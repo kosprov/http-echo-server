@@ -7,6 +7,8 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.UUID;
+
 /**
  * @author kosprov on 11/11/19.
  */
@@ -16,6 +18,7 @@ public class EchoServer {
 
     public static void main(String... args) throws Exception {
         int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "3000"));
+        String instanceId = System.getenv().getOrDefault("INSTANCE_ID", UUID.randomUUID().toString());
 
         log.info("Starting server on port {}", port);
 
@@ -29,7 +32,7 @@ public class EchoServer {
         ServletHandler handler = new ServletHandler();
         server.setHandler(handler);
 
-        ServletHolder echoServletHolder = new ServletHolder(new EchoServlet());
+        ServletHolder echoServletHolder = new ServletHolder(new EchoServlet(instanceId));
         handler.addServletWithMapping(echoServletHolder, "/*");
 
         server.start();

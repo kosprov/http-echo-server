@@ -17,16 +17,32 @@ import java.util.Enumeration;
 /**
  * @author kosprov on 12/11/19.
  */
-public class EchoServlet extends HttpServlet {
+class EchoServlet extends HttpServlet {
 
     private static final Logger log = LoggerFactory.getLogger(EchoServlet.class);
+
+    private final String instanceId;
+
+    EchoServlet(String instanceId) {
+        this.instanceId = instanceId;
+    }
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log.info("Received request: {} {} {}", req.getMethod(), req.getPathInfo(), req.getProtocol());
 
         // set response to application/octet-stream as body may contain binary data
-        resp.setContentType("application/octet-stream");
+        String contentType = req.getHeader("Content-Type");
+        if (contentType != null && contentType.startsWith("application/octet-stream")) {
+            resp.setContentType("application/octet-stream");
+        } else {
+            resp.setContentType("text/plain; charset=utf-8");
+        }
+
+        // If configured, set instance id header
+        if (instanceId != null) {
+            resp.setHeader("X-Http-Echo-Server-Id", instanceId);
+        }
 
         ServletOutputStream out = resp.getOutputStream();
 

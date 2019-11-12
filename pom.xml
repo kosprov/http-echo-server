@@ -6,7 +6,7 @@
 
     <groupId>com.kosprov.http-echo-server</groupId>
     <artifactId>http-echo-server</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,7 +38,7 @@
     </dependencies>
 
     <build>
-        <finalName>${artifactId}</finalName>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
