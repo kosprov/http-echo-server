@@ -2,11 +2,14 @@ package com.kosprov.http.echo.server;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
+import org.eclipse.jetty.servlet.FilterHolder;
+import org.eclipse.jetty.servlet.FilterMapping;
 import org.eclipse.jetty.servlet.ServletHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.servlet.Filter;
 import java.util.UUID;
 
 /**
@@ -32,8 +35,19 @@ public class EchoServer {
         ServletHandler handler = new ServletHandler();
         server.setHandler(handler);
 
-        ServletHolder echoServletHolder = new ServletHolder(new EchoServlet(instanceId));
+        ServletHolder echoServletHolder = new ServletHolder(new EchoServlet());
         handler.addServletWithMapping(echoServletHolder, "/*");
+
+        Filter instanceIdFilter = new InstanceIdFilter();
+        FilterHolder filterHolder = new FilterHolder();
+        filterHolder.setName(instanceIdFilter.getClass().getSimpleName());
+        filterHolder.setFilter(instanceIdFilter);
+        filterHolder.setInitParameter("instanceId", instanceId);
+
+        FilterMapping filterMapping = new FilterMapping();
+        filterMapping.setPathSpec("/*");
+        filterMapping.setFilterName(filterHolder.getName());
+        handler.addFilter(filterHolder, filterMapping);
 
         server.start();
     }
