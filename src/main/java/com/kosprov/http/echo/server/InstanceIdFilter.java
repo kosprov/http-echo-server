@@ -26,6 +26,7 @@ class InstanceIdFilter implements Filter {
         if (instanceId != null && !"".equals(instanceId.trim())) {
             ((HttpServletResponse) response).setHeader("X-Http-Echo-Server-Id", instanceId);
         }
+        chain.doFilter(request, response);
     }
 
     @Override

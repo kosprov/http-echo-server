@@ -6,7 +6,7 @@
 
     <groupId>com.kosprov.http-echo-server</groupId>
     <artifactId>http-echo-server</artifactId>
-    <version>3.1.0</version>
+    <version>3.1.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,12 +18,12 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
-            <version>9.4.22.v20191022</version>
+            <version>9.4.24.v20191120</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-servlet</artifactId>
-            <version>9.4.22.v20191022</version>
+            <version>9.4.24.v20191120</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
