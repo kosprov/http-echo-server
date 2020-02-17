@@ -15,7 +15,7 @@ ARG TAG=latest
 ENV TAG=$TAG
 COPY --from=builder /tmp/ssl-libs/ /opt/
 COPY --from=builder /echo-server /echo-server
-COPY start.sh /start.sh
+COPY start.sh keystore.p12 /
 RUN chmod 777 /start.sh
 
 LABEL org.label-schema.schema-version="1.0.0"
