@@ -25,7 +25,7 @@ LABEL org.label-schema.url="https://github.com/kosprov/http-echo-server"
 LABEL org.label-schema.vcs-url="https://github.com/kosprov/http-echo-server"
 LABEL org.label-schema.vendor="Kos Prov (kosprov@gmail.com)"
 LABEL org.label-schema.version="${TAG}"
-LABEL org.label-schema.docker.cmd="docker run --rm -it -e PORT=3000 -p 3000:3000 kosprov/http-echo-server"
+LABEL org.label-schema.docker.cmd="docker run --rm -it -e PORT=3000 -e TLS_PORT=3001 -p 3000:3000 -p 3001:3001 kosprov/http-echo-server"
 LABEL org.label-schema.docker.cmd.help="docker run --rm kosprov/http-echo-server --help"
 
 EXPOSE 3000/tcp

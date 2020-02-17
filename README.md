@@ -20,3 +20,16 @@ and then:
 
     curl -vs http://localhost:3000/foo
     
+To enable TLS, use:
+
+    docker run --rm -it -e TLS_PORT=3001 -p 3001:3001 kosprov/http-echo-server
+    
+This will use an internal certificate. If you want a different one, you can use variables `KEYSTORE`, `KEYSTORE_PASS` 
+and `KEY_PASS`. For example:
+
+    docker run --rm -it -e TLS_PORT=3001 -p 3001:3001 
+        -v $(pwd)/keystore.p12:/tmp/keystore.p12 \
+        -e KEYSTORE=/tmp/keystore.p12 \
+        -e KEYSTORE_PASS=keystore-pass \
+        -e KEY_PASS=key-pass \
+        kosprov/http-echo-server
