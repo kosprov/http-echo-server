@@ -1,0 +1,19 @@
+{
+  "CN": "HOST_PLACEHOLDER",
+  "hosts": [
+    "HOST_PLACEHOLDER"
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "Unknown",
+      "L": "Unknown",
+      "O": "Tools",
+      "OU": "kosprov",
+      "ST": "Unknown"
+    }
+  ]
+}

@@ -15,8 +15,11 @@ ARG TAG=latest
 ENV TAG=$TAG
 COPY --from=builder /tmp/ssl-libs/ /opt/
 COPY --from=builder /echo-server /echo-server
-COPY start.sh keystore.p12 /
-RUN chmod 777 /start.sh
+COPY cert/* start.sh /
+RUN apk --no-cache add openssl=1.1.1d-r2 \
+    && wget -O /bin/cfssl https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 \
+    && wget -O /bin/cfssljson https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64 \
+    && chmod 777 /start.sh /bin/cfssl /bin/cfssljson
 
 LABEL org.label-schema.schema-version="1.0.0"
 LABEL org.label-schema.name="http-echo-server"

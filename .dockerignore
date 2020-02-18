@@ -2,4 +2,4 @@
 !Dockerfile
 !target/http-echo-server.jar
 !start.sh
-!keystore.p12
+!cert/*

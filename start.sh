@@ -12,6 +12,16 @@ EOF
   exit 0;
 fi
 
+if [ "x$TLS_PORT" != "x" ]; then
+  domain_name=${DOMAIN_NAME:-localhost}
+  password=EchoServer
+
+  sed -i "s/HOST_PLACEHOLDER/${domain_name}/g" echo-server-csr.json
+  cfssl genkey echo-server-csr.json | cfssljson -bare echo-server
+  cfssl sign -ca=CA.pem -ca-key=CA-key.pem -config=ca-config.json -hostname=${domain_name} echo-server.csr | cfssljson -bare echo-server
+  openssl pkcs12 -export -passout pass:${password} -in echo-server.pem -inkey echo-server-key.pem -out keystore.p12 -name echo-server -CAfile CA.pem -caname CA -chain
+fi
+
 /echo-server -Djava.library.path=/opt/lib -Djavax.net.ssl.trustStore=/opt/cacerts &
 pid=$!
 trap "kill -INT ${pid}" TERM INT
